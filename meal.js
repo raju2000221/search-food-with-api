@@ -1,5 +1,6 @@
-const loadMeals = () =>{
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=meat')
+const loadMeals = (serchText) =>{
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${serchText}`
+    fetch(url)
     .then(res => res.json())
     .then(data =>displayMeals(data.meals))
 
@@ -8,6 +9,7 @@ const loadMeals = () =>{
 const displayMeals = meals =>{
     // console.log(meals)
     const melasContainerr = document.getElementById('melasContainer');
+    melasContainerr.innerHTML='';
     meals.forEach(meal => {
         console.log(meal)
 const mealDiv = document.createElement('div');
@@ -28,4 +30,10 @@ const mealDiv = document.createElement('div');
     });
 
 }
-loadMeals();
+const searchMeal = () =>{
+   const serchText =document.getElementById('search-field').value;
+   loadMeals(serchText)
+//    console.log(serchText)
+
+}
+loadMeals('fish');

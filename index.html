@@ -10,10 +10,10 @@
     <h1>Hello, world!</h1>
     <main>
         <section style="height: 120px;" class="d-flex align-items-center justify-content-center">
-            <form action="">
-                <input type="text" class="px-2 " placeholder="Search">
-                <button class="btn btn-primary">Search</button>
-            </form>
+            <div>
+                <input id="search-field" type="text" class="px-2 " placeholder="Search">
+                <button onclick="searchMeal()" class="btn btn-primary">Search</button>
+            </div>
         </section>
         <section>
             <div id="melasContainer" class="row row-cols-1 row-cols-md-3 g-4">
